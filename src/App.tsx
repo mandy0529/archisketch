@@ -1,8 +1,5 @@
 import {useEffect, useState} from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import List from './components/List';
-import SingleItem from './components/SingleItem';
-import Modal from './components/SingleItem';
 import {API_ENDPOINT} from './utils/api';
 import {DataType} from './utils/type';
 
@@ -12,11 +9,17 @@ function App() {
   const getData = async (): Promise<DataType[]> => {
     const response = await fetch(API_ENDPOINT);
     const {renderings} = await response.json();
-    setItems(renderings);
+    const tempList = renderings.map((item: any, index: number) => {
+      return {_id: item._id, order: index};
+    });
+    setItems(tempList);
     return renderings;
   };
 
-  const getSingleItem = (clickedItem: DataType) => {};
+  const removeItem = (order: number) => {
+    const removedItem = items.filter((item: any) => item.order !== order);
+    setItems(removedItem);
+  };
 
   useEffect(() => {
     getData();
@@ -24,15 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<List items={items} singleItem={getSingleItem} />}
-          />
-          <Route path="/minji" element={<SingleItem />} />
-        </Routes>
-      </BrowserRouter>
+      <List removeItem={removeItem} items={items} />
     </div>
   );
 }
