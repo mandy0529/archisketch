@@ -1,29 +1,17 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {FaDownload, FaTrash} from 'react-icons/fa';
-import {MdArrowBack, MdArrowForward, MdClose} from 'react-icons/md';
+import {MdClose} from 'react-icons/md';
 import {Wrapper} from '../styles/ListItem.styles';
 import {ModalWrapper} from '../styles/Modal.styles';
 import {ListItemType} from '../utils/type';
-import Modal from './Modal';
 
-const ListItem: React.FC<ListItemType> = ({
-  items,
-  removeItem,
-  // order,
-  // handleLeft,
-  // handleRight,
-  // setIndex,
-}) => {
+const ListItem: React.FC<ListItemType> = ({items, removeItem}) => {
   const [modalOpen, setModalOpen] = useState(false);
-  // const [singleItem, setSingleItem] = useState('');
 
   const handleClick = () => {
     setModalOpen(true);
-    // setIndex(order);
-    // setSingleItem(items._id);
   };
 
-  // useEffect(() => {}, [order]);
   return (
     <>
       {!modalOpen ? (
@@ -34,6 +22,7 @@ const ListItem: React.FC<ListItemType> = ({
               onClick={() => removeItem(items.order)}
               className="delete-btn"
             />
+            <FaDownload className="download-btn" />
           </div>
         </Wrapper>
       ) : (

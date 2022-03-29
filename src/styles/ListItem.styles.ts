@@ -8,18 +8,35 @@ export const Wrapper = styled.div`
     height: 250px;
     margin: 0.3rem;
     border-radius: 10px;
-    .delete-btn {
+    &:hover {
+      svg {
+        display: block;
+      }
+    }
+    svg {
+      display: none;
       z-index: 2000;
       position: absolute;
-      top: 5%;
-      right: 3%;
       color: white;
       font-size: 1.3rem;
       cursor: pointer;
       transition: all 0.3s linear;
       &:hover {
-        color: tomato;
         transform: scale(1.1);
+      }
+    }
+    .delete-btn {
+      top: 5%;
+      right: 3%;
+      &:hover {
+        color: tomato;
+      }
+    }
+    .download-btn {
+      top: 5%;
+      right: 14%;
+      &:hover {
+        color: gray;
       }
     }
     img {
