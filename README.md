@@ -1,9 +1,7 @@
- ## ️ 💡 archisketch
+# ️ 💡 archisketch
+##  ✅ 김민지_아키드로우_코딩 테스트 제출
 
-
-###  ✅ 김민지_아키드로우_코딩 테스트 제출
-
-# 🛠 이것들을 가지고 사용했어요!
+### 🛠 이것들을 가지고 사용했어요!
 
  <img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
  <img alt="SASS" src="https://img.shields.io/badge/STYLEDCOMPONENTS%20-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/>  
