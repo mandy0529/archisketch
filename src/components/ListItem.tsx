@@ -12,17 +12,41 @@ const ListItem: React.FC<ListItemType> = ({items, removeItem}) => {
     setModalOpen(true);
   };
 
+  const handleDownload = (e: any) => {
+    const url = e.target.parentNode.parentNode.dataset.url;
+    fetch(url, {
+      method: 'GET',
+      headers: {},
+    })
+      .then((response) => {
+        response.arrayBuffer().then(function (buffer) {
+          const url = window.URL.createObjectURL(new Blob([buffer]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', `${items._id.slice(-20)}`); //or any other extension
+          document.body.appendChild(link);
+          link.click();
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       {!modalOpen ? (
         <Wrapper>
-          <div>
+          <div data-url={items._id}>
             <img onClick={handleClick} src={items._id} alt={items._id} />
             <FaTrash
               onClick={() => removeItem(items.order)}
               className="delete-btn"
             />
-            <FaDownload className="download-btn" />
+            <FaDownload
+              onClick={(e) => handleDownload(e)}
+              className="download-btn"
+            />
           </div>
         </Wrapper>
       ) : (
