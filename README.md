@@ -26,11 +26,10 @@
 <center>
   <table>
       <td align="center">
-          <img width="200" src="https://user-images.githubusercontent.com/59499779/160741934-e3e35e98-7f10-4bc2-a980-a2510321b3fa.png" alt="구현모습1"><br/>
+          <img width="500" src="https://user-images.githubusercontent.com/59499779/160741934-e3e35e98-7f10-4bc2-a980-a2510321b3fa.png" alt="구현모습1">
       </td>
    <td align="center">
-          <img width="200" src=https://user-images.githubusercontent.com/59499779/160741962-6eb8adc4-1949-4b48-be45-5902952be237.png" alt="구현모습2"><br/>
-
+          <img width="500" src="https://user-images.githubusercontent.com/59499779/160741962-6eb8adc4-1949-4b48-be45-5902952be237.png" alt="구현모습2">
       </td>
   </table>
 </center>
